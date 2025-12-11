@@ -133,17 +133,6 @@ export default function IndustriesPage() {
                     <p className="text-muted-foreground leading-relaxed mb-4">{industry.description}</p>
                     <p className="text-muted-foreground leading-relaxed mb-6 text-sm">{industry.longDescription}</p>
                     
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {industry.stats.map((stat) => (
-                        <span
-                          key={stat}
-                          className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full"
-                        >
-                          {stat}
-                        </span>
-                      ))}
-                    </div>
-
                     <div className="mb-6">
                       <h4 className="font-semibold text-foreground mb-3 text-sm">Our Expertise</h4>
                       <div className="flex flex-wrap gap-2">
