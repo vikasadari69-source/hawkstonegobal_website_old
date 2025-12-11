@@ -1,5 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "../server/routes";
+// Static import removed for dynamic loading
 import { createServer } from "http";
 import dotenv from "dotenv";
 
@@ -47,12 +47,15 @@ app.get("/api/health", (_req, res) => {
 });
 
 // Ensure routes are registered
-try {
-    registerRoutes(httpServer, app);
-} catch (err) {
-    console.error("Failed to register routes:", err);
-    // We don't exit here so that the health check might still work
-}
+// Ensure routes are registered
+(async () => {
+    try {
+        const { registerRoutes } = await import("../server/routes");
+        registerRoutes(httpServer, app);
+    } catch (err) {
+        console.error("Failed to register routes:", err);
+    }
+})();
 
 // Error handling
 app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
