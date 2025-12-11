@@ -41,6 +41,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: false }));
 // If registerRoutes is async, we can't await it at the top level in CommonJS/older Node, but in ES modules we can.
 // The project is "type": "module" in package.json.
 
+// Ensure routes are registered
 await registerRoutes(httpServer, app);
 
 // Error handling
