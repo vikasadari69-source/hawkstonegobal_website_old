@@ -9,6 +9,11 @@ import officeImage1 from "@assets/generated_images/corporate_team_collaboration_
 import officeImage2 from "@assets/generated_images/office_meeting_1.jpg";
 import officeImage3 from "@assets/generated_images/IMG-20251210-WA0024.jpg";
 import officeImage4 from "@assets/generated_images/office_meeting_2.jpg";
+// Additional unique images for different sections - using local images
+import careersImage from "@assets/generated_images/Empowering Careers, Building Futures.jpeg";
+import recruitmentImage from "@assets/generated_images/Recruitment Solutions Tailored to Your Needs.jpg";
+import resultsImage from "@assets/generated_images/Driven by Results, Powered by People.jpg";
+import growthImage from "@assets/generated_images/Expert Hiring Services to Drive Your Growth.jpg";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   users: Users,
@@ -138,13 +143,13 @@ export default function Home() {
           <div className="gradient-line" style={{ right: "20%", top: "10%", transform: "rotate(-30deg)" }} />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-24 pb-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-64 pb-32">
           <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-center" style={{ color: '#FFFFFF' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-center" style={{ color: '#FFFFFF' }}>
               {heroContent.headline}
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed mb-12 max-w-4xl mx-auto" style={{ color: '#F0F0F0', textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
+            <p className="text-lg md:text-xl leading-relaxed mb-16 max-w-4xl mx-auto" style={{ color: '#F0F0F0', textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
               {heroContent.subheadline}
             </p>
 
@@ -163,25 +168,33 @@ export default function Home() {
       {/* 4-Card Single Row Layout */}
       <section className="py-20 md:py-28 bg-gray-50" data-testid="section-single-row-layout">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             
             {/* Card 1 - Fast Talent Delivery */}
-            <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '400px' }}>
-              <div 
-                className="absolute inset-0 bg-cover bg-center opacity-40"
-                style={{ backgroundImage: `url(${officeImage1})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-blue-900/10" />
-              <div className="relative p-6 h-full flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-[#071A46] mb-4">Fast Talent Delivery</h3>
-                <p className="text-sm text-[#0A2C68]/80 leading-relaxed">
-                  Receive shortlisted, interview-ready candidates within 24–72 hours.
-                </p>
+            <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '500px' }}>
+              {/* Top Section - Content */}
+              <div className="h-1/2 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-blue-900/10" />
+                <div className="relative p-6 h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-[#071A46] mb-3">Fast Talent Delivery</h3>
+                  <p className="text-sm text-[#0A2C68]/80 leading-relaxed">
+                    Receive shortlisted, interview-ready candidates within 24–72 hours.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Bottom Section - Image */}
+              <div className="h-1/2 relative overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${officeImage1})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent" />
               </div>
             </div>
 
             {/* Card 2 - Precision Matching (Split) */}
-            <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '400px' }}>
+            <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '500px' }}>
               {/* Top Section - Image */}
               <div className="h-1/2 relative overflow-hidden">
                 <div 
@@ -207,29 +220,14 @@ export default function Home() {
             </div>
 
             {/* Card 3 - UK & EU Compliance */}
-            <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '400px' }}>
-              <div 
-                className="absolute inset-0 bg-cover bg-center opacity-40"
-                style={{ backgroundImage: `url(${officeImage3})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-blue-900/10" />
-              <div className="relative p-6 h-full flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-[#071A46] mb-4">Specialised in UK & EU Talent Compliance</h3>
-                <p className="text-sm text-[#0A2C68]/80 leading-relaxed">
-                  Fully compliant hiring across UK & EU, including right-to-work, GDPR, and IR35.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 4 - End-to-End Recruitment Support (Split) */}
-            <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '400px' }}>
+            <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '500px' }}>
               {/* Top Section - Content */}
               <div className="h-1/2 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-blue-900/10" />
                 <div className="relative p-6 h-full flex flex-col justify-center">
-                  <h3 className="text-xl font-bold text-[#071A46] mb-3">End-to-End Recruitment Support</h3>
+                  <h3 className="text-xl font-bold text-[#071A46] mb-3">Specialised in UK & EU Talent Compliance</h3>
                   <p className="text-sm text-[#0A2C68]/80 leading-relaxed">
-                    From sourcing to onboarding — we manage the entire hiring process.
+                    Fully compliant hiring across UK & EU, including right-to-work, GDPR, and IR35.
                   </p>
                 </div>
               </div>
@@ -238,9 +236,32 @@ export default function Home() {
               <div className="h-1/2 relative overflow-hidden">
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${officeImage4})` }}
+                  style={{ backgroundImage: `url(${officeImage3})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent" />
+              </div>
+            </div>
+
+            {/* Card 4 - End-to-End Recruitment Support (Split) */}
+            <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '500px' }}>
+              {/* Top Section - Image */}
+              <div className="h-1/2 relative overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${officeImage4})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 to-transparent" />
+              </div>
+              
+              {/* Bottom Section - Content */}
+              <div className="h-1/2 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-blue-900/10" />
+                <div className="relative p-6 h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-[#071A46] mb-3">End-to-End Recruitment Support</h3>
+                  <p className="text-sm text-[#0A2C68]/80 leading-relaxed">
+                    From sourcing to onboarding — we manage the entire hiring process.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -280,8 +301,8 @@ export default function Home() {
       <section className="py-20 md:py-28 bg-gray-50" data-testid="section-about">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img src={aboutImage} alt="Team working" className="rounded-2xl shadow-xl" />
+            <div>
+              <img src={careersImage} alt="Career growth" className="rounded-2xl shadow-xl" />
                           </div>
 
             <div>
@@ -293,7 +314,7 @@ export default function Home() {
               </p>
 
               <Link href="/about">
-                <button className="bg-[#F4B000] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl mb-8" style={{ backgroundColor: '#F4B000' }}>
+                <button className="px-8 py-4 bg-[#F4B000] text-white font-semibold text-lg rounded-full hover:bg-[#F4B000]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-12">
                   {aboutContent.cta}
                 </button>
               </Link>
@@ -328,7 +349,7 @@ export default function Home() {
               </p>
 
               <Link href="/about">
-                <button className="btn-primary mb-8">
+                <button className="px-8 py-4 bg-[#F4B000] text-white font-semibold text-lg rounded-full hover:bg-[#F4B000]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-8">
                   {whyChooseContent.cta}
                 </button>
               </Link>
@@ -341,7 +362,7 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <img src={heroImage} alt="Success metrics" className="rounded-2xl shadow-xl" />
+              <img src={recruitmentImage} alt="Recruitment solutions" className="rounded-2xl shadow-xl" />
             </div>
           </div>
         </div>
@@ -357,32 +378,32 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#072A53' }}>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Driven by Results, Powered by People
               </h2>
-              <p className="text-lg mb-8" style={{ color: '#072A53' }}>
+              <p className="text-lg mb-8 text-white">
                 Your career is our priority. We take the time to understand your goals and match you with the perfect role, ensuring a seamless transition into your next opportunity.
               </p>
               <Link href="/about">
-                <button className="btn-outline">
+                <button className="px-8 py-4 bg-[#F4B000] text-white font-semibold text-lg rounded-full hover:bg-[#F4B000]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                   View All Case Studies
                 </button>
               </Link>
             </div>
 
-            <div className="bg-[#0F1A21] border border-white/10 rounded-2xl overflow-hidden">
-              <img src={aboutImage} alt="Case study" className="w-full h-48 object-cover" />
+            <div className="bg-[#eeeeee] border border-white/10 rounded-2xl overflow-hidden">
+              <img src={resultsImage} alt="Case study" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">
                   Scaling Temporary Workforce for Manufacturing Clients
                 </h3>
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-sm mb-4" style={{ color: '#FFFFFF !important' }}>
                   Demonstrated capacity to meet urgent needs of a manufacturing client by providing temporary staff quickly and efficiently.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-[#FFB000]/20 text-[#FFB000] text-xs rounded-full">Fulfillment</span>
-                  <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">Temporary Staffing</span>
-                  <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">On-demand workforce</span>
+                  <span className="px-3 py-1 bg-[#FFB000]/20 text-[#353535] text-xs rounded-full">Fulfillment</span>
+                  <span className="px-3 py-1 bg-blue-500/20 text-[#353535] text-xs rounded-full">Temporary Staffing</span>
+                  <span className="px-3 py-1 bg-green-500/20 text-[#353535] text-xs rounded-full">On-demand workforce</span>
                 </div>
               </div>
             </div>
@@ -436,7 +457,7 @@ export default function Home() {
                 {faqContent.sectionSubtitle}
               </p>
               <Link href="/contact">
-                <button className="text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl" style={{ backgroundColor: '#F4B000' }}>
+                <button className="px-8 py-4 bg-[#F4B000] text-white font-semibold text-lg rounded-full hover:bg-[#F4B000]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                   Try Recruitment Process
                 </button>
               </Link>
@@ -465,7 +486,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {ctaContent.title}
               </h2>
-              <p className="text-lg text-gray-400 mb-8">
+              <p className="text-lg text-white mb-8">
                 {ctaContent.subtitle}
               </p>
               <Link href="/contact">
@@ -480,7 +501,7 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="bg-[#0F1A21] border border-white/10 rounded-2xl p-8">
+              <div className="bg-[#ffffff] border border-white/10 rounded-2xl p-8">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full bg-[#FFB000]/20 flex items-center justify-center">
                     <Users className="w-8 h-8 text-[#FFB000]" />
@@ -490,7 +511,7 @@ export default function Home() {
                     <div className="text-gray-400">this month</div>
                   </div>
                 </div>
-                <img src={heroImage} alt="Success" className="w-full h-48 object-cover rounded-xl" />
+                <img src={growthImage} alt="Success" className="w-full h-64 object-cover rounded-xl" />
               </div>
             </div>
           </div>

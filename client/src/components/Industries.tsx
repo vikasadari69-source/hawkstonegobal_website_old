@@ -17,7 +17,6 @@ const industries = [
     description:
       "Powering digital transformation in financial services with expertise in core banking, fintech, regulatory technology, and wealth management solutions. Our professionals bring deep domain knowledge in risk management, trading systems, and payment technologies.",
     image: bfsiImage,
-    stats: ["150+ BFSI Clients", "Core Banking Experts", "RegTech Specialists"],
   },
   {
     id: "retail",
@@ -26,7 +25,6 @@ const industries = [
     description:
       "Enabling omnichannel excellence with expertise in e-commerce platforms, supply chain technology, customer experience systems, and retail analytics. From Shopify to SAP, our talent delivers seamless shopping experiences.",
     image: retailImage,
-    stats: ["100+ Retail Partners", "Omnichannel Experts", "Analytics Specialists"],
   },
   {
     id: "automotive",
@@ -35,7 +33,6 @@ const industries = [
     description:
       "Driving the future of mobility with expertise in connected vehicles, autonomous systems, EV technology, and smart manufacturing. Our engineers support Industry 4.0 initiatives across the automotive value chain.",
     image: autoImage,
-    stats: ["80+ Auto Clients", "EV Specialists", "IoT Engineers"],
   },
   {
     id: "healthcare",
@@ -44,7 +41,6 @@ const industries = [
     description:
       "Advancing healthcare with expertise in health informatics, medical devices, pharmaceutical R&D, and regulatory compliance. Our talent understands HIPAA, FDA requirements, and clinical trial management.",
     image: healthcareImage,
-    stats: ["120+ Healthcare Clients", "HIPAA Experts", "MedTech Engineers"],
   },
   {
     id: "telecom",
@@ -53,7 +49,6 @@ const industries = [
     description:
       "Connecting the world with expertise in 5G, network infrastructure, OSS/BSS, and telecommunications software. Our professionals support carriers, equipment manufacturers, and service providers globally.",
     image: telecomImage,
-    stats: ["60+ Telecom Partners", "5G Specialists", "Network Architects"],
   },
   {
     id: "consulting",
@@ -62,7 +57,6 @@ const industries = [
     description:
       "Enabling digital transformation with expertise across cloud, AI/ML, data engineering, and enterprise architecture. Our consultants partner with leading technology firms to deliver complex transformation programs.",
     image: connectivityImage,
-    stats: ["200+ Tech Partners", "Cloud Architects", "AI/ML Experts"],
   },
 ];
 

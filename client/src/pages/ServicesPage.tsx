@@ -10,49 +10,37 @@ const services = [
     icon: Users,
     title: "Contract & Temporary Staffing",
     description:
-      "Flexible technology staffing solutions for project-based needs. Access pre-vetted professionals for short-term and long-term assignments with rapid deployment within 24-72 hours.",
-    features: ["Rapid 24-72 hour deployment", "Pre-vetted technology professionals", "Flexible engagement terms", "Seamless onboarding support", "Dedicated account management", "Compliance and payroll handling"],
-    highlight: "Most Popular",
+      "Flexible technology staffing solutions for project-based needs. Access pre-vetted professionals for short-term and long-term assignments with rapid deployment within 24-72 hours. Our comprehensive approach includes seamless onboarding support, dedicated account management, and full compliance and payroll handling to ensure worry-free staffing solutions.",
   },
   {
     icon: UserCheck,
     title: "Permanent Recruitment",
     description:
-      "Strategic permanent hiring solutions to build your core technology teams. Our rigorous assessment process ensures cultural fit and long-term success for every placement.",
-    features: ["Comprehensive candidate assessment", "Cultural fit evaluation", "Salary benchmarking", "Replacement guarantee", "Interview coordination", "Offer negotiation support"],
-    highlight: null,
+      "Strategic permanent hiring solutions to build your core technology teams. Our rigorous assessment process ensures cultural fit and long-term success for every placement. We provide comprehensive candidate evaluation, cultural fit assessment, salary benchmarking, replacement guarantee, interview coordination, and offer negotiation support to secure top talent for your organization.",
   },
   {
     icon: Target,
     title: "Talent Acquisition",
     description:
-      "End-to-end talent acquisition strategies tailored to your organization's unique needs. From employer branding to candidate experience optimization.",
-    features: ["Employer brand development", "Recruitment process design", "Candidate pipeline building", "Market intelligence reports", "Talent mapping", "Succession planning"],
-    highlight: null,
+      "End-to-end talent acquisition strategies tailored to your organization's unique needs. From employer branding to candidate experience optimization, we develop comprehensive recruitment processes including employer brand development, recruitment process design, candidate pipeline building, market intelligence reports, talent mapping, and succession planning for long-term talent success.",
   },
   {
     icon: Building,
     title: "Offshore & Nearshore Delivery",
     description:
-      "Cost-effective offshore development centers in India and nearshore teams across Europe. Dedicated teams aligned with your processes and culture.",
-    features: ["Dedicated delivery centers", "Time zone-aligned teams", "40-60% cost optimization", "IP protection guaranteed", "Scalable team structures", "Cultural integration support"],
-    highlight: "Best Value",
+      "Cost-effective offshore development centers in India and nearshore teams across Europe. Dedicated teams aligned with your processes and culture, offering 40-60% cost optimization with guaranteed IP protection. Our services include dedicated delivery centers, time zone-aligned teams, scalable team structures, and cultural integration support for seamless collaboration.",
   },
   {
     icon: FileText,
     title: "Managed Services (SOW)",
     description:
-      "Outcome-based managed services with Statement of Work delivery model. Fixed-price projects with defined milestones and guaranteed deliverables.",
-    features: ["Fixed-price delivery", "Defined SLAs and KPIs", "Risk-shared partnerships", "Transparent reporting", "Quality assurance", "Continuous improvement"],
-    highlight: null,
+      "Outcome-based managed services with Statement of Work delivery model. Fixed-price projects with defined milestones and guaranteed deliverables. We provide transparent reporting, quality assurance, continuous improvement, and risk-shared partnerships with defined SLAs and KPIs to ensure project success and accountability.",
   },
   {
     icon: Crown,
     title: "Executive & Leadership Hiring",
     description:
-      "Specialized executive search for CTOs, Heads of Engineering, Digital Transformation Leaders, and other senior technology roles across industries.",
-    features: ["C-suite and VP-level search", "Confidential headhunting", "Leadership assessment", "Succession planning support", "Board advisory placements", "Compensation benchmarking"],
-    highlight: "Premium",
+      "Specialized executive search for CTOs, Heads of Engineering, Digital Transformation Leaders, and other senior technology roles across industries. Our confidential headhunting process includes C-suite and VP-level search, leadership assessment, succession planning support, board advisory placements, and compensation benchmarking for executive-level talent acquisition.",
   },
 ];
 
@@ -93,43 +81,21 @@ export default function ServicesPage() {
                   className="p-6 md:p-8 hover-elevate relative overflow-visible"
                   data-testid={`card-service-${service.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
-                  {service.highlight && (
-                    <div className="absolute -top-3 right-6">
-                      <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                        {service.highlight}
-                      </span>
-                    </div>
-                  )}
-                  <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
-                    <div className="lg:col-span-2">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <service.icon className="w-7 h-7 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl md:text-2xl font-semibold text-foreground">{service.title}</h3>
-                        </div>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
-                      <Link href="/contact">
-                        <Button variant="outline" data-testid={`button-inquire-${service.title.toLowerCase().replace(/\s+/g, "-")}`}>
-                          Inquire Now
-                          <ArrowRight className="ml-2 w-4 h-4" />
-                        </Button>
-                      </Link>
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <service.icon className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-3">Key Features</h4>
-                      <ul className="space-y-2">
-                        {service.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+                      <h3 className="text-xl md:text-2xl font-semibold text-foreground">{service.title}</h3>
                     </div>
                   </div>
+                  <p className="text-muted-foreground leading-relaxed text-lg mb-6">{service.description}</p>
+                  <Link href="/contact">
+                    <Button variant="outline" size="lg" data-testid={`button-inquire-${service.title.toLowerCase().replace(/\s+/g, "-")}`}>
+                      Inquire Now
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
                 </Card>
               </StaggerItem>
             ))}

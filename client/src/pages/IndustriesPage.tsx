@@ -21,7 +21,6 @@ const industries = [
       "Powering digital transformation in financial services with expertise in core banking, fintech, regulatory technology, and wealth management solutions. Our professionals bring deep domain knowledge in risk management, trading systems, and payment technologies.",
     longDescription: "The financial services sector demands professionals who understand both technology and the intricate regulatory landscape. Our BFSI practice has placed over 2,000 technology professionals across investment banks, retail banks, insurance companies, and fintech startups. From core banking modernization to AI-driven trading systems, we deliver talent that drives innovation while ensuring compliance.",
     image: bfsiImage,
-    stats: ["150+ BFSI Clients", "Core Banking Experts", "RegTech Specialists", "Payment Systems"],
     expertise: ["Core Banking Systems", "Trading Platforms", "Risk Management", "Payment Gateway", "Regulatory Compliance", "Wealth Management"],
   },
   {
@@ -32,7 +31,6 @@ const industries = [
       "Enabling omnichannel excellence with expertise in e-commerce platforms, supply chain technology, customer experience systems, and retail analytics. From Shopify to SAP, our talent delivers seamless shopping experiences.",
     longDescription: "The retail landscape has transformed dramatically, with technology at the center of every customer interaction. Our retail practice supports brands in creating seamless omnichannel experiences, optimizing supply chains, and leveraging data for personalized customer engagement. We've helped retailers of all sizes—from D2C startups to global retail giants—build their digital capabilities.",
     image: retailImage,
-    stats: ["100+ Retail Partners", "Omnichannel Experts", "Analytics Specialists", "Supply Chain"],
     expertise: ["E-commerce Platforms", "Inventory Management", "Customer Analytics", "Supply Chain Tech", "POS Systems", "Mobile Commerce"],
   },
   {
@@ -43,7 +41,6 @@ const industries = [
       "Driving the future of mobility with expertise in connected vehicles, autonomous systems, EV technology, and smart manufacturing. Our engineers support Industry 4.0 initiatives across the automotive value chain.",
     longDescription: "The automotive industry is undergoing its most significant transformation since the invention of the assembly line. Our automotive practice provides talent for electric vehicle development, autonomous driving systems, connected car platforms, and smart manufacturing. We partner with OEMs, Tier 1 suppliers, and mobility startups to build the future of transportation.",
     image: autoImage,
-    stats: ["80+ Auto Clients", "EV Specialists", "IoT Engineers", "ADAS Experts"],
     expertise: ["EV Systems", "Autonomous Driving", "Connected Vehicles", "Manufacturing IoT", "Telematics", "Vehicle Software"],
   },
   {
@@ -54,7 +51,6 @@ const industries = [
       "Advancing healthcare with expertise in health informatics, medical devices, pharmaceutical R&D, and regulatory compliance. Our talent understands HIPAA, FDA requirements, and clinical trial management.",
     longDescription: "Healthcare technology is transforming patient care, drug discovery, and medical research. Our healthcare practice provides professionals who understand the unique challenges of this highly regulated industry. From electronic health records to AI-powered diagnostics, we help healthcare organizations innovate while maintaining the highest standards of patient safety and data security.",
     image: healthcareImage,
-    stats: ["120+ Healthcare Clients", "HIPAA Experts", "MedTech Engineers", "Clinical Systems"],
     expertise: ["EHR Systems", "Medical Devices", "Clinical Trials", "Health Analytics", "Telemedicine", "Regulatory Tech"],
   },
   {
@@ -65,7 +61,6 @@ const industries = [
       "Connecting the world with expertise in 5G, network infrastructure, OSS/BSS, and telecommunications software. Our professionals support carriers, equipment manufacturers, and service providers globally.",
     longDescription: "The telecommunications industry is the backbone of our connected world. Our telecom practice provides talent for 5G rollouts, network virtualization, OSS/BSS modernization, and next-generation service delivery. We partner with carriers, equipment manufacturers, and technology vendors to build the networks that power digital economies.",
     image: telecomImage,
-    stats: ["60+ Telecom Partners", "5G Specialists", "Network Architects", "OSS/BSS Experts"],
     expertise: ["5G Networks", "Network Virtualization", "OSS/BSS Systems", "Edge Computing", "IoT Platforms", "Service Orchestration"],
   },
   {
@@ -76,8 +71,7 @@ const industries = [
       "Enabling digital transformation with expertise across cloud, AI/ML, data engineering, and enterprise architecture. Our consultants partner with leading technology firms to deliver complex transformation programs.",
     longDescription: "Technology consulting firms are the catalysts of enterprise digital transformation. Our consulting practice provides talent to leading global consultancies and boutique specialists alike. From cloud migrations to AI implementations, our professionals bring both technical depth and consulting acumen to deliver transformative outcomes for their clients.",
     image: connectivityImage,
-    stats: ["200+ Tech Partners", "Cloud Architects", "AI/ML Experts", "Data Engineers"],
-    expertise: ["Cloud Architecture", "AI/ML Solutions", "Data Engineering", "DevOps", "Enterprise Architecture", "Digital Strategy"],
+    expertise: ["Cloud Architecture", "AI/ML Engineering", "Data Engineering", "Enterprise Architecture", "DevOps", "Digital Strategy"],
   },
 ];
 
