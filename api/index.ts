@@ -106,5 +106,13 @@ app.use((req, res) => {
 
 export default async function handler(req: Request, res: Response) {
     await initializationPromise;
+    if (initializationError) {
+        res.status(500).json({
+            message: "Server initialization failed",
+            error: initializationError.message,
+            stack: initializationError.stack
+        });
+        return;
+    }
     return app(req, res);
 }
