@@ -17,14 +17,21 @@ export async function registerRoutes(
   app.post("/api/contact", async (req, res) => {
     try {
       const { name, email, phone, company, service, message } = req.body;
-      
+
       console.log("Contact form submission received:", { name, email, service });
 
       // Validate required fields
       if (!name || !email || !service || !message) {
         console.log("Validation failed - missing fields");
-        return res.status(400).json({ 
-          message: "Missing required fields: name, email, service, message" 
+        return res.status(400).json({
+          message: "Missing required fields: name, email, service, message"
+        });
+      }
+
+      if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
+        console.error("Missing email configuration: EMAIL_USER or EMAIL_APP_PASSWORD not set");
+        return res.status(500).json({
+          message: "Server configuration error: Email credentials not set"
         });
       }
 
@@ -45,7 +52,7 @@ export async function registerRoutes(
       // Find service label
       const serviceLabels: Record<string, string> = {
         "contract-staffing": "Contract & Temporary Staffing",
-        "permanent-recruitment": "Permanent Recruitment", 
+        "permanent-recruitment": "Permanent Recruitment",
         "talent-acquisition": "Talent Acquisition",
         "offshore-delivery": "Offshore & Nearshore Delivery",
         "managed-services": "Managed Services (SOW)",
@@ -74,19 +81,19 @@ export async function registerRoutes(
       };
 
       console.log("Sending email to:", mailOptions.to);
-      
+
       // Send email
       const result = await transporter.sendMail(mailOptions);
       console.log("Email sent successfully:", result.messageId);
 
-      res.status(200).json({ 
-        message: "Contact form submitted successfully" 
+      res.status(200).json({
+        message: "Contact form submitted successfully"
       });
 
     } catch (error) {
       console.error("Error sending contact email:", error);
-      res.status(500).json({ 
-        message: "Failed to send contact form. Please try again later." 
+      res.status(500).json({
+        message: "Failed to send contact form. Please try again later."
       });
     }
   });
@@ -95,14 +102,21 @@ export async function registerRoutes(
   app.post("/api/careers", async (req, res) => {
     try {
       const { firstName, lastName, email, countryCode, phone, jobTitle, jobId, consent1, consent2, linkedinProfile, resumeFileName, resumeFileType, resumeData } = req.body;
-      
+
       console.log("Career application submission received:", { firstName, lastName, email, jobTitle });
 
       // Validate required fields
       if (!firstName || !lastName || !email || !phone || !jobTitle || !consent1) {
         console.log("Validation failed - missing fields");
-        return res.status(400).json({ 
-          message: "Missing required fields: firstName, lastName, email, phone, jobTitle, consent1" 
+        return res.status(400).json({
+          message: "Missing required fields: firstName, lastName, email, phone, jobTitle, consent1"
+        });
+      }
+
+      if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
+        console.error("Missing email configuration: EMAIL_USER or EMAIL_APP_PASSWORD not set");
+        return res.status(500).json({
+          message: "Server configuration error: Email credentials not set"
         });
       }
 
@@ -160,19 +174,19 @@ export async function registerRoutes(
       }
 
       console.log("Sending career application email to:", mailOptions.to);
-      
+
       // Send email
       const result = await transporter.sendMail(mailOptions);
       console.log("Career application email sent successfully:", result.messageId);
 
-      res.status(200).json({ 
-        message: "Career application submitted successfully" 
+      res.status(200).json({
+        message: "Career application submitted successfully"
       });
 
     } catch (error) {
       console.error("Error sending career application email:", error);
-      res.status(500).json({ 
-        message: "Failed to submit career application. Please try again later." 
+      res.status(500).json({
+        message: "Failed to submit career application. Please try again later."
       });
     }
   });
