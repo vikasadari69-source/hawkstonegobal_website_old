@@ -87,8 +87,17 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
 });
 
 // 404 handler for API routes
-app.use((_req, res) => {
-    res.status(404).json({ message: "API route not found" });
+app.use((req, res) => {
+    res.status(404).json({
+        message: "API route not found",
+        debug: {
+            method: req.method,
+            url: req.url,
+            path: req.path,
+            baseUrl: req.baseUrl,
+            originalUrl: req.originalUrl
+        }
+    });
 });
 
 export default async function handler(req: Request, res: Response) {
