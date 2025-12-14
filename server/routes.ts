@@ -34,6 +34,12 @@ export function registerRoutes(
         });
       }
 
+      // Check environment variables
+      console.log("Checking environment variables...");
+      console.log("EMAIL_USER exists:", !!process.env.EMAIL_USER);
+      console.log("EMAIL_APP_PASSWORD exists:", !!process.env.EMAIL_APP_PASSWORD);
+      console.log("EMAIL_RECIPIENT exists:", !!process.env.EMAIL_RECIPIENT);
+
       if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
         console.error("Missing email configuration: EMAIL_USER or EMAIL_APP_PASSWORD not set");
         return res.status(500).json({
@@ -41,7 +47,7 @@ export function registerRoutes(
         });
       }
 
-      // Create email transporter using Gmail
+      // Create email transporter using Gmail with timeout
       console.log("Creating email transporter...");
       const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
@@ -51,6 +57,10 @@ export function registerRoutes(
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_APP_PASSWORD,
         },
+        // Add timeout for Vercel serverless environment
+        connectionTimeout: 5000, // 5 seconds
+        greetingTimeout: 3000,   // 3 seconds
+        socketTimeout: 5000,    // 5 seconds
       });
 
       // Verify transporter configuration
@@ -90,9 +100,14 @@ export function registerRoutes(
 
       console.log("Sending email to:", mailOptions.to);
 
-      // Send email
-      const result = await transporter.sendMail(mailOptions);
-      console.log("Email sent successfully:", result.messageId);
+      // Send email with timeout protection for Vercel
+      const emailPromise = transporter.sendMail(mailOptions);
+      const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Email sending timeout')), 8000); // 8 second timeout
+      });
+
+      const result = await Promise.race([emailPromise, timeoutPromise]);
+      console.log("Email sent successfully:", (result as any).messageId);
 
       res.status(200).json({
         message: "Contact form submitted successfully"
