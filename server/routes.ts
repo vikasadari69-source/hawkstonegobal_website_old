@@ -115,7 +115,7 @@ export function registerRoutes(
 
     } catch (error) {
       console.error("Error sending contact email:", error);
-      console.error("Error stack:", error.stack);
+      console.error("Error stack:", error instanceof Error ? error.stack : 'No stack trace');
       
       // Always return a JSON response, even in error cases
       try {
