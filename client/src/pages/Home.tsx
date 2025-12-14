@@ -124,17 +124,17 @@ export default function Home() {
 
   return (
     <PageLayout>
-      <section 
+      <section
         ref={heroRef as React.RefObject<HTMLElement>}
-        className="relative min-h-screen gradient-hero overflow-hidden" 
+        className="relative min-h-screen gradient-hero overflow-hidden"
         data-testid="section-hero"
       >
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
         <div className="hero-animated-bg" aria-hidden="true" />
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{ transform: `translateY(${heroOffset}px)` }}
         >
@@ -163,13 +163,13 @@ export default function Home() {
           </div>
         </div>
 
-              </section>
+      </section>
 
       {/* 4-Card Single Row Layout */}
       <section className="py-20 md:py-28 bg-gray-50" data-testid="section-single-row-layout">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            
+
             {/* Card 1 - Fast Talent Delivery */}
             <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '500px' }}>
               {/* Top Section - Content */}
@@ -182,10 +182,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              
+
               {/* Bottom Section - Image */}
               <div className="h-1/2 relative overflow-hidden">
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${officeImage1})` }}
                 />
@@ -197,13 +197,13 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '500px' }}>
               {/* Top Section - Image */}
               <div className="h-1/2 relative overflow-hidden">
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${officeImage2})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 to-transparent" />
               </div>
-              
+
               {/* Bottom Section - Content */}
               <div className="h-1/2 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-blue-900/10" />
@@ -213,7 +213,7 @@ export default function Home() {
                     AI-powered sourcing + industry-expert recruiters ensure accurate role-fit.
                   </p>
                   <p className="text-sm text-[#0A2C68]/80 leading-relaxed font-medium">
-                    
+
                   </p>
                 </div>
               </div>
@@ -231,10 +231,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              
+
               {/* Bottom Section - Image */}
               <div className="h-1/2 relative overflow-hidden">
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${officeImage3})` }}
                 />
@@ -246,13 +246,13 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-blue-50/80 to-blue-100/60 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2" style={{ height: '500px' }}>
               {/* Top Section - Image */}
               <div className="h-1/2 relative overflow-hidden">
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${officeImage4})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-900/30 to-transparent" />
               </div>
-              
+
               {/* Bottom Section - Content */}
               <div className="h-1/2 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-blue-900/10" />
@@ -303,7 +303,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img src={careersImage} alt="Career growth" className="rounded-2xl shadow-xl" />
-                          </div>
+            </div>
 
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -507,8 +507,8 @@ export default function Home() {
                     <Users className="w-8 h-8 text-[#FFB000]" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">2000+ new hires</div>
-                    <div className="text-gray-400">this month</div>
+                    <div className="text-2xl font-bold text-white"></div>
+                    <div className="text-gray-400"></div>
                   </div>
                 </div>
                 <img src={growthImage} alt="Success" className="w-full h-64 object-cover rounded-xl" />
@@ -616,7 +616,7 @@ function FaqItem({
 }) {
   const contentId = `faq-content-${id}`;
   const buttonId = `faq-button-${id}`;
-  
+
   return (
     <div className="faq-item interactive-box border border-gray-200 rounded-xl overflow-hidden">
       <button
