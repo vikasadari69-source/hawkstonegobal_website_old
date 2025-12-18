@@ -75,6 +75,10 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("Contact form error:", error);
+      console.error("Error details:", {
+        message: error instanceof Error ? error.message : "Unknown error",
+        stack: error instanceof Error ? error.stack : "No stack trace"
+      });
       toast({
         variant: "destructive",
         title: "Error Sending Message",
