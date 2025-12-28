@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Favicon Test</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .favicon {
+      width: 32px;
+      height: 32px;
+      margin: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <h1>Favicon Test Page</h1>
+  
+  <h2>Test 1: Basic Favicon</h2>
+  <p>This should show the favicon: <img src="/favicon.ico" alt="Favicon" class="favicon"></p>
+  
+  <h2>Test 2: PNG Icons</h2>
+  <p>16x16: <img src="/favicon-16x16.png" alt="16x16" class="favicon"></p>
+  <p>32x32: <img src="/favicon-32x32.png" alt="32x32" class="favicon"></p>
+  <p>192x192: <img src="/android-chrome-192x192.png" alt="192x192" width="64" height="64"></p>
+  <p>512x512: <img src="/android-chrome-512x512.png" alt="512x512" width="64" height="64"></p>
+  
+  <h2>Test 3: Apple Touch Icon</h2>
+  <p>Apple Touch Icon: <img src="/apple-touch-icon.png" alt="Apple Touch" width="64" height="64"></p>
+  
+  <h2>Debug Information</h2>
+  <p>If you're seeing a base64-encoded image instead of the actual favicon, try the following:</p>
+  <ol>
+    <li>Clear your browser cache (Ctrl+Shift+Delete in most browsers)</li>
+    <li>Try opening the page in an incognito/private window</li>
+    <li>Check the browser's developer tools (F12) for any 404 errors when loading the favicon files</li>
+    <li>Verify that the files exist in your server's public directory</li>
+  </ol>
+</body>
+</html>
