@@ -3,12 +3,12 @@
     "name": "Hawkstone Global Software",
     "icons": [
         {
-            "src": "/hawkstoneglobal.png",
+            "src": "/favicon_hawkstone_2024.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/hawkstoneglobal.png",
+            "src": "/favicon_hawkstone_2024.png",
             "type": "image/png",
             "sizes": "512x512"
         }
