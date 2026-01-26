@@ -1,96 +1,89 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Globe, Users, Clock, DollarSign, Layers, Zap, ArrowRight, CheckCircle, Award, Shield, Headphones } from "lucide-react";
+import { Globe, Users, Clock, DollarSign, Layers, Zap, ArrowRight, CheckCircle, Award, Shield, Headphones, Target, Briefcase, BarChart2 } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { FadeIn, FadeInUp, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 
 const reasons = [
   {
-    icon: Globe,
-    title: "Global Talent Reach",
-    description:
-      "Access a worldwide network of pre-vetted technology professionals across 15+ countries. Our local presence in the UK, Europe, USA, and India enables us to source the best talent regardless of geography.",
-    highlight: "15+ Countries",
-    details: [
-      "Local recruitment teams in major tech hubs",
-      "Cultural and language expertise",
-      "Time zone-optimized team building",
-      "Visa and relocation support",
-    ],
-  },
-  {
     icon: Users,
-    title: "Deep Engineering Expertise",
+    title: "Trusted Recruitment Partner",
     description:
-      "Our recruitment specialists bring hands-on technology experience, ensuring accurate skill assessment and cultural fit evaluation. We understand the difference between good developers and great ones.",
-    highlight: "200+ Tech Specialists",
+      "We partner with organisations across the UK and Europe to deliver reliable, compliant, and results-driven recruitment solutions. Our approach combines deep market knowledge, strong client relationships, and a commitment to quality delivery.",
     details: [
-      "Technical recruiters with engineering backgrounds",
-      "Rigorous coding assessments",
-      "Architecture and system design evaluation",
-      "Soft skills and cultural fit analysis",
+      "Proven experience across UK, EU, and global staffing markets",
+      "Dedicated account management and personalised service",
+      "Strong focus on quality, compliance, and delivery timelines",
+      "Access to a wide pool of pre-screened, job-ready talent",
+      "Transparent communication and measurable outcomes"
     ],
   },
   {
-    icon: Clock,
-    title: "Rapid 24-72 Hour Turnaround",
+    icon: Target,
+    title: "Results-Driven & Client-Centric",
     description:
-      "Time is critical in technology projects. Our streamlined processes and ready talent pools enable us to present qualified candidates within 24-72 hours of requirement finalization.",
-    highlight: "72hr Average",
+      "We go beyond traditional recruitment by aligning our services with your business objectives. Our consultants focus on understanding your workforce needs and delivering talent that drives performance and growth.",
     details: [
-      "Pre-vetted candidate databases",
-      "Automated matching algorithms",
-      "Priority response for urgent needs",
-      "Dedicated fast-track process",
+      "Client-first recruitment approach",
+      "High fill rates and reduced time-to-hire",
+      "Scalable hiring solutions for permanent and contract roles",
+      "Industry-specific recruitment expertise",
+      "Long-term partnerships built on trust and performance"
+    ],
+  },
+  {
+    icon: Shield,
+    title: "Compliance, Quality & Speed",
+    description:
+      "In a highly regulated recruitment environment, compliance and speed matter. We deliver recruitment solutions that meet UK employment standards while ensuring rapid access to skilled professionals.",
+    details: [
+      "Full compliance with UK employment law, GDPR, and IR35",
+      "Fast and efficient recruitment turnaround",
+      "Experience working within MSP and VMS environments",
+      "Robust screening and quality assurance processes",
+      "Reliable reporting and recruitment analytics"
     ],
   },
   {
     icon: Layers,
-    title: "Flexible Engagement Models",
+    title: "End-to-End Talent Solutions",
     description:
-      "Choose the model that fits your needs: staff augmentation, managed teams, project-based delivery, or hybrid approaches. Scale up or down as your requirements evolve.",
-    highlight: "5+ Models",
+      "From workforce planning to final onboarding, we offer end-to-end talent solutions designed to support evolving business needs across the UK and Europe.",
     details: [
-      "Staff augmentation",
-      "Managed team services",
-      "Project-based SOW delivery",
-      "Build-operate-transfer",
-      "Hybrid flexible models",
+      "Comprehensive recruitment lifecycle management",
+      "Expertise across permanent, contract, and executive hiring",
+      "Strong candidate experience and employer branding focus",
+      "Strategic workforce advisory and market insights",
+      "Consistent delivery across multi-location hiring"
     ],
   },
   {
-    icon: DollarSign,
-    title: "Cost-Optimized Delivery",
+    icon: Briefcase,
+    title: "Boutique Service, Enterprise Capability",
     description:
-      "Leverage our offshore and nearshore delivery centers to achieve 40-60% cost savings without compromising quality. Smart resource allocation across geographies maximizes your investment.",
-    highlight: "40-60% Savings",
+      "We combine the agility of a boutique recruitment firm with the delivery strength of an enterprise staffing partner. This allows us to adapt quickly while maintaining high standards of service and accountability.",
     details: [
-      "Offshore delivery centers in India",
-      "Nearshore teams in Eastern Europe",
-      "Blended delivery models",
-      "Transparent pricing structures",
+      "Agile and responsive recruitment teams",
+      "Customised hiring strategies, not one-size-fits-all solutions",
+      "Strong stakeholder engagement and communication",
+      "Access to niche and hard-to-find talent",
+      "Measurable ROI and long-term value creation"
     ],
   },
   {
-    icon: Zap,
-    title: "Dedicated Delivery Teams",
+    icon: BarChart2,
+    title: "Market Insight & Strategic Workforce Support",
     description:
-      "Every client receives a dedicated account manager and delivery team committed to your success. Single point of contact, proactive communication, and continuous improvement focus.",
-    highlight: "98% Satisfaction",
+      "We help organisations stay ahead by combining real-time market intelligence with strategic workforce planning. Our consultative approach enables smarter hiring decisions and sustainable workforce growth across the UK and Europe.",
     details: [
-      "Named account managers",
-      "Regular performance reviews",
-      "Proactive talent pipeline management",
-      "24/7 support availability",
+      "Deep understanding of UK and EU labour market trends",
+      "Data-driven recruitment and workforce planning",
+      "Advisory support on talent availability, rates, and skills demand",
+      "Proactive hiring strategies aligned to business growth plans",
+      "Trusted guidance for long-term workforce optimisation"
     ],
   },
-];
-
-const differentiators = [
-  { icon: Award, title: "15+ Years Experience", description: "Proven track record since 2008" },
-  { icon: Shield, title: "Quality Guarantee", description: "Replacement guarantee on all placements" },
-  { icon: Headphones, title: "24/7 Support", description: "Round-the-clock client assistance" },
 ];
 
 const testimonials = [
@@ -132,22 +125,6 @@ export default function WhyChooseUsPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-background" data-testid="section-differentiators">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <StaggerContainer className="grid md:grid-cols-3 gap-6 mb-16">
-            {differentiators.map((item) => (
-              <StaggerItem key={item.title}>
-                <Card className="p-6 text-center hover-elevate">
-                  <item.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </Card>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
       <section className="py-16 md:py-24 bg-muted/30" data-testid="section-reasons">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <FadeInUp>
@@ -165,11 +142,6 @@ export default function WhyChooseUsPage() {
                   className="p-6 md:p-8 hover-elevate relative overflow-visible h-full"
                   data-testid={`card-reason-${reason.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
-                  <div className="absolute -top-3 right-6">
-                    <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                      {reason.highlight}
-                    </span>
-                  </div>
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <reason.icon className="w-6 h-6 text-primary" />

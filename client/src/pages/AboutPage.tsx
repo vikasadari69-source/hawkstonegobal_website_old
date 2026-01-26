@@ -1,11 +1,9 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
-import { FadeIn, FadeInUp, SlideInLeft, SlideInRight, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import { FadeIn, FadeInUp, SlideInRight } from "@/components/AnimatedSection";
 import connectivityImage from "@assets/generated_images/global_tech_connectivity_abstract.png";
-import WhyChooseUs from "@/components/WhyChooseUs";
 
 
 
@@ -17,6 +15,15 @@ const leadershipTeam = [
     focus: "Global Strategy • Client Experience",
     image: "@assets/generated_images/vikas.jpg",
   },
+];
+
+const clientLogos = [
+  "Global Investment Bank",
+  "Leading E-Commerce Platform",
+  "Fortune 500 Retailer",
+  "Telecom Enterprise",
+  "FinTech Leader",
+  "Automotive Group",
 ];
 
 export default function AboutPage() {
@@ -76,8 +83,98 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="py-16 md:py-24 bg-background" data-testid="section-about-client-logos">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <FadeInUp>
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <span className="text-primary font-semibold text-base md:text-lg uppercase tracking-wider">Client Testimonials</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
+                
+              </h2>
+            </div>
+          </FadeInUp>
+
+          <FadeIn>
+            <div className="overflow-hidden rounded-xl bg-background/60 backdrop-blur-sm">
+              <div className="py-6">
+                <div className="flex w-max gap-6 animate-[marquee_22s_linear_infinite] motion-reduce:animate-none">
+                  {[...clientLogos, ...clientLogos].map((name, idx) => (
+                    <div
+                      key={`${name}-${idx}`}
+                      className="h-14 px-8 flex items-center justify-center rounded-lg bg-muted/60 text-foreground/70 text-sm font-semibold tracking-wide whitespace-nowrap"
+                    >
+                      {name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       
-      <WhyChooseUs />
+      <section className="py-16 md:py-24 bg-muted/30" data-testid="section-why-choose">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <FadeInUp>
+            <div className="text-center max-w-3xl mx-auto">
+              <button className="inline-block text-[#FFB000] font-semibold text-sm uppercase tracking-wider bg-blue-900 px-6 py-3 rounded-full hover:bg-blue-800 transition-colors cursor-pointer shadow-lg mb-4">
+                Why Choose Us
+              </button>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                The Hawkstone Advantage
+              </h2>
+              <p className="text-muted-foreground">
+                What sets us apart is our unwavering commitment to quality, speed, and value. Here's why leading enterprises choose Hawkstone Global Software.
+              </p>
+            </div>
+          </FadeInUp>
+
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <FadeIn className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-semibold mb-3">Specialist Talent Solutions Across the UK & Europe</h3>
+              <p className="text-muted-foreground">
+                We provide access to highly skilled, pre-vetted professionals across IT, Digital, Engineering, and Business functions, aligned with UK hiring standards and regulatory requirements.
+              </p>
+            </FadeIn>
+
+            <FadeIn className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" delay={0.1}>
+              <h3 className="text-xl font-semibold mb-3">Flexible Permanent, Contract and Interim Hiring</h3>
+              <p className="text-muted-foreground">
+                Our recruitment solutions are designed to support both immediate project demands and long-term workforce planning through permanent, contract, and interim staffing models.
+              </p>
+            </FadeIn>
+
+            <FadeIn className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" delay={0.2}>
+              <h3 className="text-xl font-semibold mb-3">Proven Experience with Direct Clients and MSP/VMS Models</h3>
+              <p className="text-muted-foreground">
+                Extensive experience partnering with direct end clients and operating within leading MSP and VMS frameworks, including Fieldglass, Beeline, and IQN.
+              </p>
+            </FadeIn>
+
+            <FadeIn className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" delay={0.3}>
+              <h3 className="text-xl font-semibold mb-3">Fast, Compliant and Scalable Recruitment Delivery</h3>
+              <p className="text-muted-foreground">
+                We ensure timely candidate delivery while maintaining full compliance with UK employment legislation, IR35, GDPR, and right-to-work obligations.
+              </p>
+            </FadeIn>
+
+            <FadeIn className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" delay={0.4}>
+              <h3 className="text-xl font-semibold mb-3">Sector-Focused Recruitment Expertise</h3>
+              <p className="text-muted-foreground">
+                Trusted recruitment partner to organisations across Banking, FinTech, Technology, Telecommunications, Automotive, Retail, and large enterprise environments.
+              </p>
+            </FadeIn>
+
+            <FadeIn className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow" delay={0.5}>
+              <h3 className="text-xl font-semibold mb-3">A Partnership-Led Approach</h3>
+              <p className="text-muted-foreground">
+                We focus on building long-term client relationships through transparency, quality delivery, and measurable recruitment outcomes.
+              </p>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 md:py-24 bg-primary text-primary-foreground" data-testid="section-about-cta">
         <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
@@ -97,6 +194,10 @@ export default function AboutPage() {
           </FadeInUp>
         </div>
       </section>
+
+      <style>
+        {`@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}`}
+      </style>
     </PageLayout>
   );
 }

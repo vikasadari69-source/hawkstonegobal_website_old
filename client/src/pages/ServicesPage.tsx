@@ -31,12 +31,6 @@ const services = [
       "Cost-effective offshore development centers in India and nearshore teams across Europe. Dedicated teams aligned with your processes and culture, offering 40-60% cost optimization with guaranteed IP protection. Our services include dedicated delivery centers, time zone-aligned teams, scalable team structures, and cultural integration support for seamless collaboration.",
   },
   {
-    icon: FileText,
-    title: "Managed Services (SOW)",
-    description:
-      "Outcome-based managed services with Statement of Work delivery model. Fixed-price projects with defined milestones and guaranteed deliverables. We provide transparent reporting, quality assurance, continuous improvement, and risk-shared partnerships with defined SLAs and KPIs to ensure project success and accountability.",
-  },
-  {
     icon: Crown,
     title: "Executive & Leadership Hiring",
     description:
